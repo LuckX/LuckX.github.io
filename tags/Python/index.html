@@ -123,7 +123,7 @@
 
 
 
-  <title>垃圾收集器和内类分配 | Turing</title>
+  <title>标签: Python | Turing</title>
   
 
 
@@ -146,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -282,299 +282,52 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Python<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/13/垃圾收集器和内类分配/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Bruin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Turing">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+            <a class="post-title-link" href="/2019/07/06/Python基本语法/" itemprop="url">
+              
+                <span itemprop="name">Python基本</span>
+              
+            </a>
         
-          <h1 class="post-title" itemprop="name headline">垃圾收集器和内类分配</h1>
-        
+      </h2>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T22:05:48+08:00">2019-01-13</time>
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-06T09:56:44+08:00" content="2019-07-06">
+          07-06
+        </time>
+      </div>
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/" itemprop="url" rel="index">
-                    <span itemprop="name">JAVA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <blockquote>
-<p>《Java虚拟机》第三章的读书笔记，介绍了GC的算法和常见的集中收集器；</p>
-</blockquote>
-<h1 id="对象是否存活"><a href="#对象是否存活" class="headerlink" title="对象是否存活"></a>对象是否存活</h1><h2 id="引用计数算法"><a href="#引用计数算法" class="headerlink" title="引用计数算法"></a>引用计数算法</h2><p>对象添加一个计数器，引用加1，失效减1，计数器为0事说明对象失效；</p>
-<h2 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h2><p>GC Roots到这个对象不可达；<br>四种引用关系：</p>
-<ul>
-<li>强引用</li>
-<li>软引用</li>
-<li>弱引用</li>
-<li>虚引用<a id="more"></a>
-</li>
-</ul>
-<h1 id="堆内存回收："><a href="#堆内存回收：" class="headerlink" title="堆内存回收："></a>堆内存回收：</h1><ul>
-<li>1.GC Roots不可达；</li>
-<li>2.有没有必要执行Finalize方法（此方法是为了使C和C++程序员更容易接受java代码的一种妥协，不建议使用）<ul>
-<li>a)没有覆盖finalize（）方法或finalize方法已被调用过——没有必要执行；</li>
-<li>b)有必要执行finalize（）<ul>
-<li>放到F-Queue队列</li>
-<li>低优先级的finalize线程执行</li>
-</ul>
-</li>
-<li>c)重新与引用连上的接点建立联系——不被回收</li>
-<li>d)没有建立连接，即被回收</li>
-</ul>
-</li>
-</ul>
-<h1 id="回收方法区"><a href="#回收方法区" class="headerlink" title="回收方法区"></a>回收方法区</h1><ul>
-<li>废弃的常量</li>
-<li>无用的类<ul>
-<li>所有实例被回收</li>
-<li>该类的ClassLoder被回收</li>
-<li>该类的java.lang.class对象没有在任何地方被引用</li>
-</ul>
-</li>
-</ul>
-<h1 id="垃圾收集算法"><a href="#垃圾收集算法" class="headerlink" title="垃圾收集算法"></a>垃圾收集算法</h1><h2 id="标记-清除算法"><a href="#标记-清除算法" class="headerlink" title="标记-清除算法"></a>标记-清除算法</h2><ul>
-<li>过程：首先标记需要回收的对象，然后一次性全部回收</li>
-<li>缺点：产生大量的不连续碎片，导致后面分配大对象时需要再进行垃圾收集动作；</li>
-</ul>
-<h2 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h2><ul>
-<li>过程：将内存分为两个相同区域，每次只是用其中一块，当一块的内存使用完之后，将空间清掉并将存活的复制到另一半</li>
-<li>缺点：内存缩小为原来一半</li>
-</ul>
-<h2 id="标记-整理算法"><a href="#标记-整理算法" class="headerlink" title="标记-整理算法"></a>标记-整理算法</h2><ul>
-<li>过程：同标记清除，只是标记之后不直接清除，而是让所有存活对象向前移动然后清理端边界意外内存；</li>
-</ul>
-<h2 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h2><p>根据存活周期不同将内存划分为几块，不同存活时间采用不同算法</p>
-<h1 id="堆内存"><a href="#堆内存" class="headerlink" title="堆内存"></a>堆内存</h1><ul>
-<li>新生代（Young）1/3——年轻代用来存放新近创建的对象，一般朝生夕死，使用复制清除算法和并行收集器进行垃圾回收，对年轻代的垃圾回收称作初级回收 (minor gc)<ul>
-<li>Eden（8）</li>
-<li>Survior1（1）</li>
-<li>Survivor2（1）</li>
-</ul>
-</li>
-<li>老年代（Old)2/3——1.如果对象经过一次Minor GC还存活，并且又能被Survivor空间接受，那么将被移动到Survivor空间当中。并将其年龄设为1，对象在Survivor每熬过一次Minor GC，年龄就加1，当年龄达到一定的程度（默认为15）时，就会被晋升到老年代中了；2.使用标记清除算法收集，Full GC 发生的次数不会有 Minor GC 那么频繁，并且做一次 Full GC 要比进行一次 Minor GC 的时间更长；</li>
-</ul>
-<p><img src="/2019/01/13/垃圾收集器和内类分配/新生代老年代.jpg" alt="新生代老年代"></p>
-<h1 id="HotSpot的算法实现（什么时候开始收集）"><a href="#HotSpot的算法实现（什么时候开始收集）" class="headerlink" title="HotSpot的算法实现（什么时候开始收集）"></a>HotSpot的算法实现（什么时候开始收集）</h1><ul>
-<li>枚举根节点——使用一组OopMap的数据结构来记录栈和寄存器中位置上的引用，当GC停顿时，就可以知道哪些地方有对象的引用；</li>
-<li>安全点（safepoint）——程序执行GC的地方<ul>
-<li>是否具有让程序长时间执行的特征选定的</li>
-<li>如何进入GC<ul>
-<li>抢先式中断：GC发生时，中断线程，如果有线程不在安全点，恢复线程，让它跑到安全点</li>
-<li>主动式中断：设置一个标志（标志地方和安全点重合）各个线程主动轮询这个标志，发现为真实就中断挂起</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>安全区域——解决线程Sleep和Blocked状态<ul>
-<li>指：在一段代码片段中，引用关系不会发生变化，在这个区域中的任何地方GC都是安全的</li>
-</ul>
-</li>
-</ul>
-<h1 id="垃圾收集器（如何收集）——没有最完美的解释器"><a href="#垃圾收集器（如何收集）——没有最完美的解释器" class="headerlink" title="垃圾收集器（如何收集）——没有最完美的解释器"></a>垃圾收集器（如何收集）——没有最完美的解释器</h1><h2 id="Serial收集器——Client模式下默认的新生代收集器"><a href="#Serial收集器——Client模式下默认的新生代收集器" class="headerlink" title="Serial收集器——Client模式下默认的新生代收集器"></a>Serial收集器——Client模式下默认的新生代收集器</h2><ul>
-<li>单线程</li>
-<li>STW，进行垃圾收集时，必须挺掉其他所有线程</li>
-<li>与其他单线程收集器比，简单而高效</li>
-</ul>
-<h2 id="ParNew收集器——复制算法并行多线程新生代收集器"><a href="#ParNew收集器——复制算法并行多线程新生代收集器" class="headerlink" title="ParNew收集器——复制算法并行多线程新生代收集器"></a>ParNew收集器——复制算法并行多线程新生代收集器</h2><ul>
-<li>Serial的多线程版本</li>
-<li>Server模式下首选新生代收集器（除Serial外，只有他能与CMS配合工作）</li>
-<li>单CPU 不如Serial</li>
-</ul>
-<h2 id="Parallel-Scavenge收集器——同ParNew收集器"><a href="#Parallel-Scavenge收集器——同ParNew收集器" class="headerlink" title="Parallel Scavenge收集器——同ParNew收集器"></a>Parallel Scavenge收集器——同ParNew收集器</h2><ul>
-<li>目的是达到一个可控制的吞吐量；</li>
-<li>axGCPauseMillis</li>
-<li>GCTimeRatio</li>
-</ul>
-<h2 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h2><ul>
-<li>Serial收集器的老年代版本</li>
-<li>使用标记-整理算法；</li>
-<li>在Server模式下，与Parallel Scavenge收集器搭配使用</li>
-</ul>
-<h2 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h2><ul>
-<li>Parallel Scavenge收集器的老年代版本</li>
-<li>使用标记-整理算法</li>
-</ul>
-<h2 id="CMS收集器（Concurrent-Mark-Sweep）——并发收集，低停顿"><a href="#CMS收集器（Concurrent-Mark-Sweep）——并发收集，低停顿" class="headerlink" title="CMS收集器（Concurrent Mark Sweep）——并发收集，低停顿"></a>CMS收集器（Concurrent Mark Sweep）——并发收集，低停顿</h2><ul>
-<li>以获取最短回收停顿时间为目的的收集器</li>
-<li>基于标记清除算法<ul>
-<li>初始标记——标记GCRoots能直接关联的对象</li>
-<li>并发标记——GC Roots Tracing过程</li>
-<li>重新标记——修正并发标记阶段因用户程序继续运作导致的标记变动</li>
-<li>并发清除——清除垃圾对象，与用户对象一起执行</li>
-</ul>
-</li>
-<li>缺点：<ul>
-<li>对CPU资源非常敏感</li>
-<li>无法处理浮动垃圾</li>
-<li>由于使用标记清除算法会产生大量碎片</li>
-</ul>
-</li>
-</ul>
-<h2 id="G1收集器（Garbage-First）——面向服务端应用的垃圾收集器"><a href="#G1收集器（Garbage-First）——面向服务端应用的垃圾收集器" class="headerlink" title="G1收集器（Garbage-First）——面向服务端应用的垃圾收集器"></a>G1收集器（Garbage-First）——面向服务端应用的垃圾收集器</h2><ul>
-<li>特点<ul>
-<li>并行与并发</li>
-<li>分代收集——采用不同的方式收集垃圾</li>
-<li>空间整合——使用复制算法和标记清理算法避免产生碎片</li>
-<li>可预测的停顿，明确指定在一个长度M毫秒的时间片段内的消耗在垃圾收集上的时间</li>
-</ul>
-</li>
-<li>运行步骤<ul>
-<li>初始标记</li>
-<li>并发标记</li>
-<li>最终标记</li>
-<li>筛选回收</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/编程/" rel="tag"># 编程</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/01/13/时间管理/" rel="next" title="时间管理">
-                <i class="fa fa-chevron-left"></i> 时间管理
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/06/Python基本语法/" rel="prev" title="Python基本">
-                Python基本 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -582,10 +335,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -606,17 +355,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -714,22 +454,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对象是否存活"><span class="nav-number">1.</span> <span class="nav-text">对象是否存活</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用计数算法"><span class="nav-number">1.1.</span> <span class="nav-text">引用计数算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可达性分析算法"><span class="nav-number">1.2.</span> <span class="nav-text">可达性分析算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆内存回收："><span class="nav-number">2.</span> <span class="nav-text">堆内存回收：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回收方法区"><span class="nav-number">3.</span> <span class="nav-text">回收方法区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">4.</span> <span class="nav-text">垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标记-清除算法"><span class="nav-number">4.1.</span> <span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制算法"><span class="nav-number">4.2.</span> <span class="nav-text">复制算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标记-整理算法"><span class="nav-number">4.3.</span> <span class="nav-text">标记-整理算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分代收集算法"><span class="nav-number">4.4.</span> <span class="nav-text">分代收集算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆内存"><span class="nav-number">5.</span> <span class="nav-text">堆内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HotSpot的算法实现（什么时候开始收集）"><span class="nav-number">6.</span> <span class="nav-text">HotSpot的算法实现（什么时候开始收集）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集器（如何收集）——没有最完美的解释器"><span class="nav-number">7.</span> <span class="nav-text">垃圾收集器（如何收集）——没有最完美的解释器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Serial收集器——Client模式下默认的新生代收集器"><span class="nav-number">7.1.</span> <span class="nav-text">Serial收集器——Client模式下默认的新生代收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ParNew收集器——复制算法并行多线程新生代收集器"><span class="nav-number">7.2.</span> <span class="nav-text">ParNew收集器——复制算法并行多线程新生代收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallel-Scavenge收集器——同ParNew收集器"><span class="nav-number">7.3.</span> <span class="nav-text">Parallel Scavenge收集器——同ParNew收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serial-Old收集器"><span class="nav-number">7.4.</span> <span class="nav-text">Serial Old收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parallel-Old收集器"><span class="nav-number">7.5.</span> <span class="nav-text">Parallel Old收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CMS收集器（Concurrent-Mark-Sweep）——并发收集，低停顿"><span class="nav-number">7.6.</span> <span class="nav-text">CMS收集器（Concurrent Mark Sweep）——并发收集，低停顿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G1收集器（Garbage-First）——面向服务端应用的垃圾收集器"><span class="nav-number">7.7.</span> <span class="nav-text">G1收集器（Garbage-First）——面向服务端应用的垃圾收集器</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -859,10 +583,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.0"></script>
-
-
 
   
 
