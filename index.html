@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="关于我 姓名： Bruin 座右铭 ： Some birds aren’t meant to be caged, that’s all. Their feathers are just too bright. Email ： bruin2014@163.com 技能栈： JAVA Pyton 计算机操作系统 Linux 算法 设计模式  目前状态 努力学习Java，编写技术博客 学习Web开发，安">
+<meta name="description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Turing">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:title" content="分类">
+<meta property="og:url" content="http://yoursite.com/categories/index.html">
 <meta property="og:site_name" content="Turing">
-<meta property="og:description" content="关于我 姓名： Bruin 座右铭 ： Some birds aren’t meant to be caged, that’s all. Their feathers are just too bright. Email ： bruin2014@163.com 技能栈： JAVA Pyton 计算机操作系统 Linux 算法 设计模式  目前状态 努力学习Java，编写技术博客 学习Web开发，安">
+<meta property="og:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-25T15:31:50.815Z">
+<meta property="og:updated_time" content="2017-02-19T06:56:44.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Turing">
-<meta name="twitter:description" content="关于我 姓名： Bruin 座右铭 ： Some birds aren’t meant to be caged, that’s all. Their feathers are just too bright. Email ： bruin2014@163.com 技能栈： JAVA Pyton 计算机操作系统 Linux 算法 设计模式  目前状态 努力学习Java，编写技术博客 学习Web开发，安">
+<meta name="twitter:title" content="分类">
+<meta name="twitter:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/categories/">
 
 
 
@@ -387,26 +387,17 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>常用网络命令</p>
 </blockquote>
-<h1 id="ipconfig"><a href="#ipconfig" class="headerlink" title="ipconfig"></a>ipconfig</h1><p>手动启动查看、修改网络接口相关的参数：<br>RX：网络从启动到目前为止数据包的接收情况；<br>TX：网络从启动到目前为止数据包的发送情况；<br>collisions：数据包冲突情况<br>txqueuelen：缓冲区大小；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">查看接口</span><br><span class="line">eth0      Link encap:Ethernet  HWaddr 00:0c:29:ed:64:7b  </span><br><span class="line">          inet addr:192.168.78.128  Bcast:192.168.78.255  Mask:255.255.255.0</span><br><span class="line">          inet6 addr: fe80::20c:29ff:feed:647b/64 Scope:Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:7027 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:1571 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:1000 </span><br><span class="line">          RX bytes:8601705 (8.6 MB)  TX bytes:132884 (132.8 KB)</span><br><span class="line">关闭网卡</span><br><span class="line">ifconfig eth0 up</span><br><span class="line">启动网卡</span><br><span class="line">ifconfig eth0 down</span><br></pre></td></tr></table></figure>
-<h1 id="ifup-ifdown"><a href="#ifup-ifdown" class="headerlink" title="ifup/ifdown"></a>ifup/ifdown</h1><p>以配置文件，/etc/sysconfig/network-scripts里面的ifcfg-ethx等文件设置的参数来启动网络参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifup eth0</span><br><span class="line">ifdown eth0</span><br></pre></td></tr></table></figure></p>
-<h1 id="route"><a href="#route" class="headerlink" title="route"></a>route</h1><blockquote>
-<p>修改、查看路由</p>
-</blockquote>
-<h2 id="查看路由"><a href="#查看路由" class="headerlink" title="查看路由"></a>查看路由</h2><p>reoute 以主机名显示路由表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</span><br><span class="line">default         192.168.78.2    0.0.0.0         UG    0      0        0 eth0</span><br><span class="line">192.168.78.0    *               255.255.255.0   U     1      0        0 eth0</span><br></pre></td></tr></table></figure></p>
-<p>route -n以IP地址显示路由表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Kernel IP routing table</span><br><span class="line">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface</span><br><span class="line">0.0.0.0         192.168.78.2    0.0.0.0         UG    0      0        0 eth0</span><br><span class="line">192.168.78.0    0.0.0.0         255.255.255.0   U     1      0        0 eth0</span><br></pre></td></tr></table></figure></p>
-<p>flag各个字段的含义<br>U：表示路由是启动的<br>H：目标是一部主机而非网域<br>G：需要透过外部的gateway来传递封包<br>R：使用动态路由时，恢复路由信息的标志<br>D：已经由服务或转port功能设定为动态路由<br>M：路由已经被修改<br>！：这个路由将不会被接受</p>
-<h2 id="删除-添加路由"><a href="#删除-添加路由" class="headerlink" title="删除/添加路由"></a>删除/添加路由</h2><p>添加路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">route add [-net|-host] [网络|主机] netmask [mask] [gw|dev] [IP地址|网卡]</span><br><span class="line">添加默认路由</span><br><span class="line">route add default gw 192.168.78.2</span><br><span class="line">删除路由</span><br><span class="line">route del -net 0.0.0.0 netmask 0.0.0.0</span><br><span class="line">添加路由</span><br><span class="line">route add -net 10.144.252.0 netmask 255.255.252.0 gw 10.144.252.1</span><br></pre></td></tr></table></figure></p>
-<h1 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h1><p>通过ICMP数据包来检测整个网络状态报告<br>-c ping的cishu<br>-M 检测网络MTU大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@ubuntu:/etc/init.d# ping -c 3 127.0.0.1</span><br><span class="line">PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.048 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.063 ms</span><br><span class="line">64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.051 ms</span><br><span class="line"></span><br><span class="line">--- 127.0.0.1 ping statistics ---</span><br><span class="line">3 packets transmitted, 3 received, 0% packet loss, time 1998ms</span><br></pre></td></tr></table></figure></p>
-<h1 id="traceroute"><a href="#traceroute" class="headerlink" title="traceroute"></a>traceroute</h1><p>检测两主机间各节点的通讯状态，默认使用UDP检测<br>-d 使用Socket层级的排错功能。<br>-g 设置来源路由网关，最多可设置8个。<br>-i 使用指定的网络界面送出数据包。<br>-I 使用ICMP回应取代UDP资料信息。<br>-m 设置检测数据包的最大存活数值TTL的大小。<br>-n 直接使用IP地址而非主机名称。<br>-p 设置UDP传输协议的通信端口。<br>-r 忽略普通的Routing Table，直接将数据包送到远端主机上。<br>-s 设置本地主机送出数据包的IP地址。<br>-t 设置检测数据包的TOS数值。<br>-w 设置等待远端主机回报的时间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">traceroute -n www.baidu.com</span><br></pre></td></tr></table></figure></p>
-<h1 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h1><p>-n 使用IP地址，不使用IP地址<br>-r 列出路由表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">netstat -nr 等同于 route -n</span><br><span class="line">netstat -nr</span><br><span class="line">Kernel IP routing table</span><br><span class="line">Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</span><br><span class="line">0.0.0.0         192.168.78.2    0.0.0.0         UG        0 0          0 eth0</span><br><span class="line">192.168.78.0    0.0.0.0         255.255.255.0   U         0 0          0 eth0</span><br></pre></td></tr></table></figure></p>
-<p>-a 列出所有连接状态<br>-l 仅列出在listen(监听)的服务器网路状态<br>-p 里出PID和Program<br>-t 列出tcp数据包连接<br>-u 列出udp数据包连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">查看端口被占用：</span><br><span class="line">netstat  -anp  |grep  3306</span><br><span class="line">查看已经启动的所有服务</span><br><span class="line">netstat -tulnp</span><br></pre></td></tr></table></figure></p>
-
-          
+<h1 id="ipconfig"><a href="#ipconfig" class="headerlink" title="ipconfig"></a>ipconfig</h1><p>手动启动查看、修改网络接口相关的参数：<br>RX：网络从启动到目前为止数据包的接收情况；<br>TX：网络从启动到目前为止数据包的发送情况；<br>collisions：数据包冲突情况<br>txqueuelen：缓冲区大小；<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/25/网络基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
