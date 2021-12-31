@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二分法]]></title>
+    <url>%2F2019%2F07%2F06%2F%E4%BA%8C%E5%88%86%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[题目 难易程度 推荐指数 374. 猜数字大小 简单 5星 240. 搜索二维矩阵 II 简单 5星 1011. 在 D 天内送达包裹的能力 中等 5星]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>二分法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前缀和&&差分]]></title>
     <url>%2F2019%2F07%2F06%2F%E5%89%8D%E7%BC%80%E5%92%8C%26%26%E5%B7%AE%E5%88%86%2F</url>
     <content type="text"><![CDATA[前缀和 题目 难易程度 推荐指数 523. 连续的子数组和 中等 5星 560. 和为 K 的子数组 中等 5星 差分 题目 难易程度 推荐指数 1094. 拼车 中等 5星 1109. 航班预订统计 中等 5星]]></content>
@@ -10,17 +21,6 @@
       <tags>
         <tag>前缀和</tag>
         <tag>差分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[二分法]]></title>
-    <url>%2F2019%2F07%2F06%2F%E4%BA%8C%E5%88%86%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[题目 难易程度 推荐指数 374. 猜数字大小 简单 5星 240. 搜索二维矩阵 II 简单 5星 1011. 在 D 天内送达包裹的能力 中等 5星]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>二分法</tag>
       </tags>
   </entry>
   <entry>
