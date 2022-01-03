@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[DFS]]></title>
     <url>%2F2019%2F07%2F06%2FDFS%2F</url>
-    <content type="text"><![CDATA[深度优先搜索是用来遍历或搜索树和图数据结构的算法，它是可以从任意跟节点开始，选择一条路径走到底，并通过回溯来访问所有节点的算法。简单来说就是通过选择一条道路走到无路可走的时候回退到上一个岔路口，并标记这条路已走过，选择另外一条道路继续走，直到走遍每一条路。 算法框架首先回忆一下二叉树的遍历123456789void traverse(TreeNode root) &#123; // 判断 base case if (root == null) &#123; return; &#125; // 访问两个相邻结点：左子结点、右子结点 traverse(root.left); traverse(root.right);&#125; 二叉树的 DFS 有两个要素：访问相邻结点和终止条件；推倒到网格 相邻节点：上下左右四个节点； 终止条件：超过边界；那么可以写出网格的框架123456789101112131415161718void dfs(int[][] grid, int r, int c) &#123; // 判断 base case // 如果坐标 (r, c) 超出了网格范围，直接返回 if (!inArea(grid, r, c)) &#123; return; &#125; // 访问上、下、左、右四个相邻结点 dfs(grid, r - 1, c); dfs(grid, r + 1, c); dfs(grid, r, c - 1); dfs(grid, r, c + 1);&#125;// 判断坐标 (r, c) 是否在网格中boolean inArea(int[][] grid, int r, int c) &#123; return 0 &lt;= r &amp;&amp; r &lt; grid.length &amp;&amp; 0 &lt;= c &amp;&amp; c &lt; grid[0].length;&#125; 网格结构的 DFS 与二叉树的 DFS 最大的不同之处在于，遍历中可能遇到遍历过的结点。这是因为，网格结构本质上是一个「图」，我们可以把每个格子看成图中的结点，每个结点有向上下左右的四条边。在图中遍历时，自然可能遇到重复遍历结点。可以使用标记已遍历过的节点的方法1234567891011121314151617181920212223void dfs(int[][] grid, int r, int c) &#123; // 判断 base case if (!inArea(grid, r, c)) &#123; return; &#125; // 如果这个格子不是岛屿，直接返回 if (grid[r][c] != 1) &#123; return; &#125; grid[r][c] = 2; // 将格子标记为「已遍历过」 // 访问上、下、左、右四个相邻结点 dfs(grid, r - 1, c); dfs(grid, r + 1, c); dfs(grid, r, c - 1); dfs(grid, r, c + 1);&#125;// 判断坐标 (r, c) 是否在网格中boolean inArea(int[][] grid, int r, int c) &#123; return 0 &lt;= r &amp;&amp; r &lt; grid.length &amp;&amp; 0 &lt;= c &amp;&amp; c &lt; grid[0].length;&#125; 推荐题目 题目 难易程度 推荐指数 113. 路径总和 II 中等 5星 337. 打家劫舍 III 中等 5星 岛屿专题|题目|难易程度|推荐指数||:-:|:-:|:-:||200. 岛屿数量|简单|5星||463. 岛屿的周长|简单|5星||695. 岛屿的最大面积|中等|5星||934. 最短的桥|中等|5星||827. 最大人工岛|困难|4星| 参考链接 岛屿类问题的通用解法、DFS 遍历框架]]></content>
+    <content type="text"><![CDATA[深度优先搜索是用来遍历或搜索树和图数据结构的算法，它是可以从任意跟节点开始，选择一条路径走到底，并通过回溯来访问所有节点的算法。简单来说就是通过选择一条道路走到无路可走的时候回退到上一个岔路口，并标记这条路已走过，选择另外一条道路继续走，直到走遍每一条路。 算法框架首先回忆一下二叉树的遍历123456789void traverse(TreeNode root) &#123; // 判断 base case if (root == null) &#123; return; &#125; // 访问两个相邻结点：左子结点、右子结点 traverse(root.left); traverse(root.right);&#125; 二叉树的 DFS 有两个要素：访问相邻结点和终止条件；推倒到网格 相邻节点：上下左右四个节点； 终止条件：超过边界； 那么可以写出网格的框架123456789101112131415161718void dfs(int[][] grid, int r, int c) &#123; // 判断 base case // 如果坐标 (r, c) 超出了网格范围，直接返回 if (!inArea(grid, r, c)) &#123; return; &#125; // 访问上、下、左、右四个相邻结点 dfs(grid, r - 1, c); dfs(grid, r + 1, c); dfs(grid, r, c - 1); dfs(grid, r, c + 1);&#125;// 判断坐标 (r, c) 是否在网格中boolean inArea(int[][] grid, int r, int c) &#123; return 0 &lt;= r &amp;&amp; r &lt; grid.length &amp;&amp; 0 &lt;= c &amp;&amp; c &lt; grid[0].length;&#125; 网格结构的 DFS 与二叉树的 DFS 最大的不同之处在于，遍历中可能遇到遍历过的结点。这是因为，网格结构本质上是一个「图」，我们可以把每个格子看成图中的结点，每个结点有向上下左右的四条边。在图中遍历时，自然可能遇到重复遍历结点。可以使用标记已遍历过的节点的方法1234567891011121314151617181920212223void dfs(int[][] grid, int r, int c) &#123; // 判断 base case if (!inArea(grid, r, c)) &#123; return; &#125; // 如果这个格子不是岛屿，直接返回 if (grid[r][c] != 1) &#123; return; &#125; grid[r][c] = 2; // 将格子标记为「已遍历过」 // 访问上、下、左、右四个相邻结点 dfs(grid, r - 1, c); dfs(grid, r + 1, c); dfs(grid, r, c - 1); dfs(grid, r, c + 1);&#125;// 判断坐标 (r, c) 是否在网格中boolean inArea(int[][] grid, int r, int c) &#123; return 0 &lt;= r &amp;&amp; r &lt; grid.length &amp;&amp; 0 &lt;= c &amp;&amp; c &lt; grid[0].length;&#125; 推荐题目树 题目 难易程度 推荐指数 113. 路径总和 II 中等 5星 337. 打家劫舍 III 中等 5星 岛屿专题 题目 难易程度 推荐指数 200. 岛屿数量 简单 5星 463. 岛屿的周长 简单 5星 695. 岛屿的最大面积 中等 5星 934. 最短的桥 中等 5星 827. 最大人工岛 困难 4星 参考链接 岛屿类问题的通用解法、DFS 遍历框架]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -57,28 +57,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[拓扑排序]]></title>
-    <url>%2F2019%2F07%2F06%2F%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[题目 难易程度 推荐指数 210. 课程表 II 中等 5星]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>拓扑排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[字典树]]></title>
-    <url>%2F2019%2F07%2F06%2F%E5%AD%97%E5%85%B8%E6%A0%91%2F</url>
-    <content type="text"><![CDATA[题目 难易程度 推荐指数 820. 单词的压缩编码 中等 5星 648. 单词替换 中等 5星 208. 实现 Trie (前缀树) 中等 5星]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>字典树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[回溯]]></title>
     <url>%2F2019%2F07%2F06%2F%E5%9B%9E%E6%BA%AF%2F</url>
     <content type="text"><![CDATA[题目 难易程度 推荐指数 46. 全排列 中等 5星 1239. 串联字符串的最大长度 中等 5星]]></content>
@@ -90,6 +68,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[拓扑排序]]></title>
+    <url>%2F2019%2F07%2F06%2F%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[题目 难易程度 推荐指数 210. 课程表 II 中等 5星]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>拓扑排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[滑窗]]></title>
     <url>%2F2019%2F07%2F06%2F%E6%BB%91%E7%AA%97%2F</url>
     <content type="text"><![CDATA[题目 难易程度 推荐指数 209. 长度最小的子数组 简单 5星 3. 无重复字符的最长子串 简单 5星]]></content>
@@ -98,6 +87,17 @@
       </categories>
       <tags>
         <tag>滑窗</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[字典树]]></title>
+    <url>%2F2019%2F07%2F06%2F%E5%AD%97%E5%85%B8%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[题目 难易程度 推荐指数 820. 单词的压缩编码 中等 5星 648. 单词替换 中等 5星 208. 实现 Trie (前缀树) 中等 5星]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>字典树</tag>
       </tags>
   </entry>
 </search>
