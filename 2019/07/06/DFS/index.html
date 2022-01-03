@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta name="description" content="算法学习">
 <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="算法小站">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="算法小站">
-<meta property="og:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta property="og:description" content="算法学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-19T06:56:44.665Z">
+<meta property="og:updated_time" content="2021-12-31T02:25:39.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta name="twitter:title" content="算法小站">
+<meta name="twitter:description" content="算法学习">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/about/">
 
 
 
@@ -383,7 +383,10 @@
       
 
       
-        <h2 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h2><p>首先回忆一下二叉树的遍历<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 base case</span></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问两个相邻结点：左子结点、右子结点</span></span><br><span class="line">    traverse(root.left);</span><br><span class="line">    traverse(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>深度优先搜索是用来遍历或搜索树和图数据结构的算法，它是可以从任意跟节点开始，选择一条路径走到底，并通过回溯来访问所有节点的算法。简单来说就是通过选择一条道路走到无路可走的时候回退到上一个岔路口，并标记这条路已走过，选择另外一条道路继续走，直到走遍每一条路。<br><a id="more"></a></p>
+<h2 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h2><p>首先回忆一下二叉树的遍历<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 base case</span></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问两个相邻结点：左子结点、右子结点</span></span><br><span class="line">    traverse(root.left);</span><br><span class="line">    traverse(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <p>二叉树的 DFS 有两个要素：访问相邻结点和终止条件；<br>推倒到网格</p>
 <ul>
 <li>相邻节点：上下左右四个节点；</li>
@@ -412,7 +415,7 @@
 </tr>
 </tbody>
 </table>
-<p>岛屿专题<br>|:-:|:-:|:-:|<br>|<a href="https://leetcode-cn.com/problems/number-of-islands/" target="_blank" rel="noopener">200. 岛屿数量</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/island-perimeter/" target="_blank" rel="noopener">463. 岛屿的周长</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/max-area-of-island/" target="_blank" rel="noopener">695. 岛屿的最大面积</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/shortest-bridge/" target="_blank" rel="noopener">934. 最短的桥</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/making-a-large-island/" target="_blank" rel="noopener">827. 最大人工岛</a>|困难|4星|</p>
+<p>岛屿专题<br>|题目|难易程度|推荐指数|<br>|:-:|:-:|:-:|<br>|<a href="https://leetcode-cn.com/problems/number-of-islands/" target="_blank" rel="noopener">200. 岛屿数量</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/island-perimeter/" target="_blank" rel="noopener">463. 岛屿的周长</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/max-area-of-island/" target="_blank" rel="noopener">695. 岛屿的最大面积</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/shortest-bridge/" target="_blank" rel="noopener">934. 最短的桥</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/making-a-large-island/" target="_blank" rel="noopener">827. 最大人工岛</a>|困难|4星|</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/" target="_blank" rel="noopener">岛屿类问题的通用解法、DFS 遍历框架</a></li>
 </ul>

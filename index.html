@@ -75,17 +75,17 @@
 
 
 
-<meta name="description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta name="description" content="算法学习">
 <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta property="og:title" content="算法小站">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="算法小站">
-<meta property="og:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta property="og:description" content="算法学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-19T06:56:44.665Z">
+<meta property="og:updated_time" content="2021-12-31T02:25:39.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="Some birds aren&apos;t meant to be caged, that&apos;s all. Their feathers are just too bright.">
+<meta name="twitter:title" content="算法小站">
+<meta name="twitter:description" content="算法学习">
 
 
 
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/about/">
 
 
 
@@ -552,42 +552,15 @@
 
       
         
-          
-            <h2 id="算法框架"><a href="#算法框架" class="headerlink" title="算法框架"></a>算法框架</h2><p>首先回忆一下二叉树的遍历<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 base case</span></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问两个相邻结点：左子结点、右子结点</span></span><br><span class="line">    traverse(root.left);</span><br><span class="line">    traverse(root.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>二叉树的 DFS 有两个要素：访问相邻结点和终止条件；<br>推倒到网格</p>
-<ul>
-<li>相邻节点：上下左右四个节点；</li>
-<li>终止条件：超过边界；<br>那么可以写出网格的框架<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 base case</span></span><br><span class="line">    <span class="comment">// 如果坐标 (r, c) 超出了网格范围，直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (!inArea(grid, r, c)) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 访问上、下、左、右四个相邻结点</span></span><br><span class="line">    dfs(grid, r - <span class="number">1</span>, c);</span><br><span class="line">    dfs(grid, r + <span class="number">1</span>, c);</span><br><span class="line">    dfs(grid, r, c - <span class="number">1</span>);</span><br><span class="line">    dfs(grid, r, c + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断坐标 (r, c) 是否在网格中</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">inArea</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> &lt;= r &amp;&amp; r &lt; grid.length </span><br><span class="line">        	&amp;&amp; <span class="number">0</span> &lt;= c &amp;&amp; c &lt; grid[<span class="number">0</span>].length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>网格结构的 DFS 与二叉树的 DFS 最大的不同之处在于，遍历中可能遇到遍历过的结点。这是因为，网格结构本质上是一个「图」，我们可以把每个格子看成图中的结点，每个结点有向上下左右的四条边。在图中遍历时，自然可能遇到重复遍历结点。<br>可以使用标记已遍历过的节点的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 判断 base case</span></span><br><span class="line">    <span class="keyword">if</span> (!inArea(grid, r, c)) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果这个格子不是岛屿，直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (grid[r][c] != <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    grid[r][c] = <span class="number">2</span>; <span class="comment">// 将格子标记为「已遍历过」</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 访问上、下、左、右四个相邻结点</span></span><br><span class="line">    dfs(grid, r - <span class="number">1</span>, c);</span><br><span class="line">    dfs(grid, r + <span class="number">1</span>, c);</span><br><span class="line">    dfs(grid, r, c - <span class="number">1</span>);</span><br><span class="line">    dfs(grid, r, c + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断坐标 (r, c) 是否在网格中</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">inArea</span><span class="params">(<span class="keyword">int</span>[][] grid, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> &lt;= r &amp;&amp; r &lt; grid.length </span><br><span class="line">        	&amp;&amp; <span class="number">0</span> &lt;= c &amp;&amp; c &lt; grid[<span class="number">0</span>].length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="推荐题目"><a href="#推荐题目" class="headerlink" title="推荐题目"></a>推荐题目</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">题目</th>
-<th style="text-align:center">难易程度</th>
-<th style="text-align:center">推荐指数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://leetcode-cn.com/problems/path-sum-ii/" target="_blank" rel="noopener">113. 路径总和 II</a></td>
-<td style="text-align:center">中等</td>
-<td style="text-align:center">5星</td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="https://leetcode-cn.com/problems/house-robber-iii/" target="_blank" rel="noopener">337. 打家劫舍 III</a></td>
-<td style="text-align:center">中等</td>
-<td style="text-align:center">5星</td>
-</tr>
-</tbody>
-</table>
-<p>岛屿专题<br>|:-:|:-:|:-:|<br>|<a href="https://leetcode-cn.com/problems/number-of-islands/" target="_blank" rel="noopener">200. 岛屿数量</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/island-perimeter/" target="_blank" rel="noopener">463. 岛屿的周长</a>|简单|5星|<br>|<a href="https://leetcode-cn.com/problems/max-area-of-island/" target="_blank" rel="noopener">695. 岛屿的最大面积</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/shortest-bridge/" target="_blank" rel="noopener">934. 最短的桥</a>|中等|5星|<br>|<a href="https://leetcode-cn.com/problems/making-a-large-island/" target="_blank" rel="noopener">827. 最大人工岛</a>|困难|4星|</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/" target="_blank" rel="noopener">岛屿类问题的通用解法、DFS 遍历框架</a></li>
-</ul>
-
-          
+          <blockquote>
+<p>深度优先搜索是用来遍历或搜索树和图数据结构的算法，它是可以从任意跟节点开始，选择一条路径走到底，并通过回溯来访问所有节点的算法。简单来说就是通过选择一条道路走到无路可走的时候回退到上一个岔路口，并标记这条路已走过，选择另外一条道路继续走，直到走遍每一条路。<br></p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/06/DFS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1145,7 +1118,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/回溯/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/拓扑排序/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="算法小站">
@@ -1164,7 +1137,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/06/回溯/" itemprop="url">回溯</a></h1>
+                <a class="post-title-link" href="/2019/07/06/拓扑排序/" itemprop="url">拓扑排序</a></h1>
         
 
         <div class="post-meta">
@@ -1246,12 +1219,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="https://leetcode-cn.com/problems/permutations/" target="_blank" rel="noopener">46. 全排列</a></td>
-<td style="text-align:center">中等</td>
-<td style="text-align:right">5星</td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/" target="_blank" rel="noopener">1239. 串联字符串的最大长度</a></td>
+<td style="text-align:left"><a href="https://leetcode-cn.com/problems/course-schedule-ii/" target="_blank" rel="noopener">210. 课程表 II</a></td>
 <td style="text-align:center">中等</td>
 <td style="text-align:right">5星</td>
 </tr>
@@ -1470,7 +1438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/拓扑排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/回溯/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="算法小站">
@@ -1489,7 +1457,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/06/拓扑排序/" itemprop="url">拓扑排序</a></h1>
+                <a class="post-title-link" href="/2019/07/06/回溯/" itemprop="url">回溯</a></h1>
         
 
         <div class="post-meta">
@@ -1571,7 +1539,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="https://leetcode-cn.com/problems/course-schedule-ii/" target="_blank" rel="noopener">210. 课程表 II</a></td>
+<td style="text-align:left"><a href="https://leetcode-cn.com/problems/permutations/" target="_blank" rel="noopener">46. 全排列</a></td>
+<td style="text-align:center">中等</td>
+<td style="text-align:right">5星</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/" target="_blank" rel="noopener">1239. 串联字符串的最大长度</a></td>
 <td style="text-align:center">中等</td>
 <td style="text-align:right">5星</td>
 </tr>
