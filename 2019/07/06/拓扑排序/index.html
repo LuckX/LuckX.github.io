@@ -383,7 +383,17 @@
       
 
       
-        <table>
+        <h2 id="图"><a href="#图" class="headerlink" title="图"></a><a href="https://blog.csdn.net/u010710458/article/details/78528896" target="_blank" rel="noopener">图</a></h2><ul>
+<li>图：是一个顶点集合加上一个连接不同顶点对的边的集合组成。定义规定不允许出现重复边（平行边）、连接到顶点自身的边（自环），定义了一个简单图。</li>
+<li>自环：连接到顶点自身的边。</li>
+<li>平行边：连接同一对顶点的两条边，含有平行边的图称为多重图。</li>
+<li>顶点的度数：依附于它的边的总数。</li>
+<li>顶点连通：两个顶点之间存在一条连接双方的路径。</li>
+<li>连通图：任意一个顶点都存在一条路径到达另一个任意顶点。<br>极大连通子图：一个非连通的图由若干个连通图组成，这些连通的图都是极大连通子图。</li>
+<li>图的密度：已经连接的顶点对占所有可能被连接顶点对的比例，稀疏图被连接的顶点对较少，稠密图没有被连接的顶点对很少<br>图的两种数据结构邻接矩阵和邻接表，由于邻接矩阵需要占据大量空间一般使用邻接表来存储图；</li>
+</ul>
+<p>拓扑排序即是对有向无环图的排序过程，一般使用BFS；</p>
+<table>
 <thead>
 <tr>
 <th style="text-align:left">题目</th>
@@ -396,6 +406,11 @@
 <td style="text-align:left"><a href="https://leetcode-cn.com/problems/course-schedule-ii/" target="_blank" rel="noopener">210. 课程表 II</a></td>
 <td style="text-align:center">中等</td>
 <td style="text-align:right">5星</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://leetcode-cn.com/problems/find-players-with-zero-or-one-losses/" target="_blank" rel="noopener">5235. 找出输掉零场或一场比赛的玩家</a></td>
+<td style="text-align:center">中等</td>
+<td style="text-align:right">4星</td>
 </tr>
 </tbody>
 </table>
@@ -429,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/06/滑窗/" rel="next" title="滑窗">
-                <i class="fa fa-chevron-left"></i> 滑窗
+              <a href="/2019/07/06/回溯/" rel="next" title="回溯">
+                <i class="fa fa-chevron-left"></i> 回溯
               </a>
             
           </div>
@@ -439,8 +454,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/06/回溯/" rel="prev" title="回溯">
-                回溯 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/06/DFS/" rel="prev" title="DFS">
+                DFS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -493,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -584,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图"><span class="nav-number">1.</span> <span class="nav-text">图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
